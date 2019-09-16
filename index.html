@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>External Load Design</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.css" rel="stylesheet">
+  <!--Pretty checkboxes-->
+  <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <div class="container">
+    <div class="col-md-8 offset-md-2">
+
+
+
+      <!-- main panel starts-->
+
+      <div class="card text-center mt-3">
+        <div class="card-header">
+          <h3>External Load Design</h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+          <form id="app" class="needs-validation" name="qualify" novalidate>
+            <div class="form-row">
+
+
+              <div class="col-md-12 mb-4">
+
+
+                <!-- Start :: Time lag factor  -->
+
+                <div id="time_lag_factor_wrapper " class="mb-5 overflow-hidden">
+
+
+                  <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Time Lag Factor <span
+                      id="tl_value" class="ml-4">3.5</span></h3>
+
+
+
+                  <!-- Pressure Pipe-->
+
+
+                  <div class="p-1 overflow-hidden mb-3" id="lag_factor_option_wrapper">
+                    <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                      <input type="radio" id="pressure_pipe" name="time_lag_factor" checked/>
+                      <div class="state">
+                        <img class="image" src="img/002.png">
+                        <label>Pressure pipe</label>
+                      </div>
+                    </div>
+
+
+
+                    <!-- Gravity Sewer Pipe -->
+
+                    <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                      <input type="radio" id="gravity_sewer_pipe" name="time_lag_factor" />
+                      <div class="state">
+                        <img class="image" src="img/002.png">
+                        <label>Gravity Sewer Pipe</label>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  <!--pressurized timeframe -->
+
+                  <div id="pressurized_timeframe_wrapper" class="pt-3 overflow-hidden">
+
+                    <label for="pressurized_timeframe" style="float:left; font-weight:700;">Choose pressurized
+                      timeframe*</label>
+                    <select id="pressurized_timeframe" class="browser-default custom-select" required="">
+                      <option value="1">Within 3 months of installation</option>
+                      <option value="1.5">Between 3 months and 2 years</option>
+                      <option value="2">After 2 years</option>
+                    </select>
+
+                  </div>
+
+                  <div id="garvity_sewer_wrapper" class="pt-3 ">
+
+                    <label for="garvity_sewer" style="float:left; font-weight:700;">Choose garvity sewer*</label>
+
+
+                    <div class="table-responsive" style="border:1px solid #ced4da;">
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col">Soil Group</th>
+                            <th scope="col">USCS</th>
+                            <th scope="col">UNCOMPACTED</th>
+                            <th scope="col">Mod >85% or >90%</th>
+                            <th scope="col">High >95% or >100%</th>
+
+                          </tr>
+                        </thead>
+
+
+                        <tbody>
+
+                          <!-- Crushed Rock-->
+
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Crushed Rock</td>
+
+                            <td>
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="2" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>2</label>
+                                </div>
+                              </div>
+                            </td>
+
+
+                            <td>
+
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="3" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>3</label>
+                                </div>
+                              </div>
+
+                            </td>
+
+                            <td>
+
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="3" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>3</label>
+                                </div>
+                              </div>
+
+                            </td>
+
+
+                          </tr>
+
+
+                          <!-- GW GP SW SP-->
+
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>GW GP SW SP</td>
+                            <td>
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="1.5" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>1.5</label>
+                                </div>
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>2.5</label>
+                                </div>
+                              </div>
+
+                            </td>
+
+
+                            <td>
+
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>2.5</label>
+                                </div>
+                              </div>
+                            </td>
+
+
+                          </tr>
+
+
+                          <!-- 	GC GM SC SM sCL sML gCL gML-->
+
+                          <tr>
+                            <th scope="row">3</th>
+                            <td> GC GM SC SM sCL sML gCL gML</td>
+                            <td>
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="1.5" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>1.5</label>
+                                </div>
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>2.5</label>
+                                </div>
+                              </div>
+
+                            </td>
+
+
+                            <td>
+
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>2.5</label>
+                                </div>
+                              </div>
+                            </td>
+
+
+                          </tr>
+
+                          <!-- CL ML -->
+
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>CL ML</td>
+                            <td>
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="1.5" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>1.5</label>
+                                </div>
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>2.5</label>
+                                </div>
+                              </div>
+
+                            </td>
+
+
+                            <td>
+
+                              <div class="pretty p-image p-plain float-left m-1">
+                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <div class="state">
+                                  <img class="image" src="img/004.png">
+                                  <label>2.5</label>
+                                </div>
+                              </div>
+                            </td>
+
+
+                          </tr>
+
+                          <!-- CH MH OH OL Pt -->
+
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>CH MH OH OL Pt</td>
+                            <td></td>
+                            <td>DO NOT USE</td>
+                            <td></td>
+
+
+                          </tr>
+
+                        </tbody>
+
+                      </table>
+
+                    </div>
+
+                  </div>
+
+                  <div id="dl" class="mt-3">
+                    <p>DL = Deflection lag factor, dimensionless; Use 1.0 when using prism load for dead load
+                      calculation.</p>
+                  </div>
+
+                </div>
+
+                <!-- End:: Time lag factor-->
+
+
+
+
+
+
+
+
+
+
+                <!-- Start:: Pipe Stiffness -->
+
+                <div id="pipe_stiffness_wrapper" class="mt-5 mb-5  overflow-hidden">
+
+
+                  <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Pipe Stiffness <span id="tl_value" class="ml-4">3.5</span></h3>
+
+
+
+
+
+                  <div class="p-1 overflow-hidden" id="pipe_stiffness_option_wrapper">
+
+
+
+                    <!-- 400,000 modulus -->
+
+                    <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                      <input type="radio" id="modulus1" name="pipe_stiffness" checked />
+                      <div class="state">
+                        <img class="image" src="img/002.png">
+                        <label>400,000 modulus</label>
+                      </div>
+                    </div>
+
+
+
+                    <!-- 500,000 modulus -->
+
+                    <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                      <input type="radio" id="modulus2" name="pipe_stiffness" />
+                      <div class="state">
+                        <img class="image" src="img/002.png">
+                        <label>500,000 modulus</label>
+                      </div>
+                    </div>
+
+
+
+                    <!-- Custom value -->
+
+
+
+                    <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                      <input type="radio" id="custom_modulus" name="pipe_stiffness" />
+                      <div class="state">
+                        <img class="image" src="img/002.png">
+                        <label>Custom Value</label>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+
+
+                  <div id="psi_for_modulus1_wrapper" class="pt-3 overflow-hidden">
+
+                    <label for="psi_for_modulus1" style="float:left; font-weight:700;">400,000 modulus</label>
+                    <select id="psi_for_modulus1" class="browser-default custom-select" required="">
+                      <option value="">Choose...</option>
+                      <option value="7">DR 64 (7 psi)</option>
+                      <option value="14">DR 51 (14 psi)</option>
+                      <option value="26">DR 42 (26 psi)</option>
+                      <option value="28">DR 41 (28 psi)</option>
+                      <option value="46">DR 35 (46 psi)</option>
+                      <option value="52">DR 33.5 (52 psi)</option>
+                      <option value="57">DR 32.5 (57 psi)</option>
+                      <option value="91">DR 28 (91 psi)</option>
+                      <option value="115">DR 26 (115 psi)</option>
+                      <option value="129">DR 25 (129 psi)</option>
+                      <option value="224">DR 21 (224 psi)</option>
+                      <option value="364">DR 18 (364 psi)</option>
+                      <option value="437">DR 17 (437 psi)</option>
+                      <option value="815">DR 14 (815 psi)</option>
+                      <option value="916">DR 13.5 (916 psi)</option>
+                    </select>
+
+                  </div>
+
+                  <div id="psi_for_modulus2_wrapper" class="pt-3 overflow-hidden">
+
+                    <label for="psi_for_modulus2" style="float:left; font-weight:700;">400,000 modulus</label>
+                    
+                    <select id="psi_for_modulus2" class="browser-default custom-select" required="">
+                      <option value="">Choose...</option>
+                      <option value="9">DR 64 (9 psi)</option>
+                      <option value="18">DR 51 (18 psi)</option>
+                      <option value="32">DR 42 (32 psi)</option>
+                      <option value="35">DR 41 (35 psi)</option>
+                      <option value="57">DR 35 (57 psi)</option>
+                      <option value="65">DR 33.5 (65 psi)</option>
+                      <option value="71">DR 32.5 (71 psi)</option>
+                      <option value="114">DR 28 (114 psi)</option>
+                      <option value="144">DR 26 (144 psi)</option>
+                      <option value="161">DR 25 (161 psi)</option>
+                      <option value="279">DR 21 (279 psi)</option>
+                      <option value="455">DR 18 (455 psi)</option>
+                      <option value="546">DR 17 (546 psi)</option>
+                      <option value="1019">DR 14 (1019 psi)</option>
+                      <option value="1145">DR 135 (1145 psi)</option>
+                    </select>
+
+                  </div>
+                  
+                  
+                  <div id="psi_for_custom_modulus_wrapper" class="pt-3 overflow-hidden">
+
+                    <label for="psi_for_custom_modulus" style="float:left; font-weight:700;">custom value</label>
+                    <input type="text" class="form-control" id="psi_for_custom_modulus" name="psi_for_custom_modulus" required="">
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please input Trench width.
+                    </div>
+
+
+                    
+
+                  </div>
+
+
+                  
+
+
+
+
+
+
+                </div>
+
+
+                <!-- End:: Pipe Stiffness -->
+
+
+                <!-- Start:: Add live Load-->
+
+                <div id="live_load_wrapper">
+
+                    <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Add. Live Load (W <sub>L</sub>) <span id="tl_value" class="ml-4">3.5</span></h3>
+                    
+                    
+                    <div class="p-1 overflow-hidden" id="live_load_option_wrapper">
+
+
+
+                        <!-- No Live Load -->
+    
+                        <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                          <input type="radio" id="no_live_load" name="live_load" checked/>
+                          <div class="state">
+                            <img class="image" src="img/002.png">
+                            <label>No Live Load</label>
+                          </div>
+                        </div>
+    
+    
+    
+                        <!-- Single-Wheel Load -->
+    
+                        <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                          <input type="radio" id="single_wheel_load" name="live_load" />
+                          <div class="state">
+                            <img class="image" src="img/002.png">
+                            <label>Single-Wheel Load</label>
+                          </div>
+                        </div>
+    
+    
+    
+                        <!-- Two Passing Trucks -->
+
+                        
+                        <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                            <input type="radio" id="two_passing_trucks" name="live_load" />
+                            <div class="state">
+                              <img class="image" src="img/002.png">
+                              <label>Two Passing Trucks</label>
+                            </div>
+                          </div>
+    
+                  <!--Highway-->
+    
+                        <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                          <input type="radio" id="highway" name="live_load" />
+                          <div class="state">
+                            <img class="image" src="img/002.png">
+                            <label>H20 Highway</label>
+                          </div>
+                        </div>
+
+                        <!-- E80 Railway -->
+
+                        <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                            <input type="radio" id="railway" name="live_load" />
+                            <div class="state">
+                              <img class="image" src="img/002.png">
+                              <label>E80 Railway</label>
+                            </div>
+                          </div>
+
+                          <!-- HS20 Loading -->
+
+                          <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                              <input type="radio" id="hs20_loading" name="live_load" />
+                              <div class="state">
+                                <img class="image" src="img/002.png">
+                                <label>HS20 Loading </label>
+                              </div>
+                            </div>
+
+
+
+                             <!-- HS25 Loading -->
+
+                          <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                              <input type="radio" id="hs25_loading" name="live_load" />
+                              <div class="state">
+                                <img class="image" src="img/002.png">
+                                <label>HS25 Loading </label>
+                              </div>
+                            </div>
+
+
+
+                             <!-- HS20 Loading -->
+
+                          <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                              <input type="radio" id="hs20_loading" name="live_load" />
+                              <div class="state">
+                                <img class="image" src="img/002.png">
+                                <label>HS20 Loading </label>
+                              </div>
+                            </div>
+
+
+
+                             <!-- Coopers E80 Loading -->
+
+                          <div class="pretty p-image p-plain float-left mr-4 mt-3">
+                              <input type="radio" id="airport" name="live_load" />
+                              <div class="state">
+                                <img class="image" src="img/002.png">
+                                <label>Airport</label>
+                              </div>
+                            </div>
+
+                      </div>
+
+
+                      <div id="psi_for_custom_modulus_wrapper" class="pt-3 overflow-hidden">
+
+                          <!-- Max Wheel Load (lbs) -->
+
+                          <label for="max_wheel_load" style="float:left; font-weight:700;" class="mt-3">Max Wheel Load (lbs)*</label>
+                          <input type="text" class="form-control" id="max_wheel_load" name="max_wheel_load" required="">
+                          
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            Please input Trench width.
+                          </div>
+
+                              <!-- Pipe Diameter -->
+                          <label for="pipe_diameter" style="float:left; font-weight:700;"  class="mt-3">Pipe Diameter (in.)*</label>
+                          <input type="text" class="form-control" id="pipe_diameter" name="pipe_diameter" required="">
+                         
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            Please input Trench width.
+                          </div>
+      
+      
+      
+                          
+      
+                        </div>
+    
+
+
+                </div>
+                 <!-- END:: Add live Load-->
+
+
+                 <!-- Start:: Depth of vurial -->
+
+                 
+                      <div id="depth_of_burial_wrapper" class="mt-5 mb-5  overflow-hidden">
+
+                  <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Depth of Burial 
+                    <span id="show_start_value" class="ml-4">2</span>ft/
+                    <span id="show_end_value">30</span>ft/
+                    <span id="show_increment_value">5</span>ft
+                  </h3>
+
+                          <!-- Start  -->
+
+                          <label for="start" style="float:left; font-weight:700;"  class="mt-3">Start*</label>
+                          <input type="text" class="form-control" id="start" name="start" value="2">
+                          
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            Please input Start value.
+                          </div>
+
+                              <!-- End -->
+                          <label for="end" style="float:left; font-weight:700;"  class="mt-3">End*</label>
+                          <input type="text" class="form-control" id="end" name="end"  value="30">
+                         
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            Please input end value.
+                          </div>
+
+                           <!-- Increment -->
+                           <label for="increment" style="float:left; font-weight:700;"  class="mt-3">Increment*</label>
+                           <input type="text" class="form-control" id="increment" name="increment"  value="5">
+                          
+                           <div class="valid-feedback">
+                             Looks good!
+                           </div>
+                           <div class="invalid-feedback">
+                             Please input ibncrement value.
+                           </div>
+       
+       
+      
+      
+      
+                          
+      
+                        </div>
+
+
+                        
+
+
+
+                 <!-- End:: Depth of vurial -->
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+
+
+
+
+
+              <!-- <div class="col-md-6 mb-4">
+                <label for="trench_width" style="float:left; font-weight:700;">Trench Width, B<sub>d</sub>
+                  (in.)*</label>
+                <input type="text" class="form-control" id="trench_width" name="trench_width" required="">
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please input Trench width.
+                </div>
+              </div> -->
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="seperator result" style="display: none;">
+              <hr>
+
+              <h2><b>Results</b></h2>
+
+              <hr>
+            </div>
+
+
+
+            <div class="form-row result" style="display: none;">
+
+
+
+              <!--result info-->
+
+
+              <table class="table table-borderless">
+                <thead>
+
+                </thead>
+
+
+
+                <tbody>
+
+                  <tr>
+
+                    <td>E'<sub>n</sub> Value : </td>
+                    <td id="">Otto</td>
+
+
+                  </tr>
+
+                  <tr>
+
+                    <td>E'<sub>b</sub> Value:</td>
+                    <td id="">Otto</td>
+
+
+                  </tr>
+
+
+
+
+                  <tr>
+
+                    <td>Pipe OD, D, (in.):</td>
+                    <td id="">Otto</td>
+
+
+                  </tr>
+
+
+                  <tr>
+
+                    <td>Composite E' value:</td>
+                    <td id="">Otto</td>
+
+
+                  </tr>
+
+
+
+
+                </tbody>
+              </table>
+
+
+
+
+            </div>
+
+
+            <button class="btn btn-primary" type="button" id="calculate">Calculate</button>
+
+
+          </form>
+
+
+
+        </div>
+        <div class="card-footer text-muted">
+          All the calculations of this calculator is 100% correct
+        </div>
+      </div>
+
+      <!-- main panel ends-->
+
+
+
+
+    </div>
+  </div>
+  <!-- Start your project here-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+
+
+  <script type="text/javascript" src="js/calculator.js"></script>
+
+
+
+
+
+</body>
+
+</html>
