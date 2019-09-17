@@ -926,7 +926,7 @@
                                               <td>
                                                
                                                 <div class="pretty p-image p-plain float-left" >
-                                                    <input  name="bcs" type="radio">
+                                                    <input  name="bcs" type="radio" id="bcs_your_value_option">
                                                   <div class="state">
                                                     <img class="image" src="img/004.png">
                                                     <label>Your Value</label>
@@ -939,7 +939,7 @@
                   
                   
                                               <td>
-                                                  <input type="text" class="form-control" id="trench_width" name="trench_width" required="">
+                                                  <input type="text" class="form-control" id="bcs_your_value_input" name="bcs_your_value_input" required="">
                                                   <div class="valid-feedback">
                                                     Looks good!
                                                   </div>
@@ -1001,8 +1001,9 @@
 
                  <div id="bedding_constant" class="mt-5 mb-5  overflow-hidden">
 
-                  <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Bedding constant (k)
-                    <span id="show_start_value" class="ml-4">2</span>
+                  <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;"> Combined Unit Weight of Backfill Materials ( W<sub>e</sub> + W <sub>s</sub>)
+                    <span id="show_combined_unit_weight">120</span> lbs/ft<sup>3</sup>
+                    
                     
                   </h3>
 
@@ -1011,18 +1012,18 @@
 
               <!-- Start:: Combined unit weight input table -->
 
-              <div style="border:1px solid #ced4da;">
+              <div  id="combined_unit_wrapper" style="border:1px solid #ced4da;">
 
-                <div class="col-md-8 offset-md-2">
+                
 
                     <div class="table-responsive" >
                         <table class="table table-borderless">
                           <thead>
                             <tr>
-                                
-                              <th scope="col"> lbs/ft3</th> 
-                              <th scope="col" class="float-left">Bedding Angle</th>
-                              <th scope="col">Constant, K</th>
+                               	
+                              <th scope="col" class="float-left"> lbs/ft3</th> 
+                              <th scope="col">	κμ</th>
+                              <th scope="col">Material</th>
                               
   
                             </tr>
@@ -1031,28 +1032,35 @@
   
                           <tbody>
   
-                            <!-- Crushed Rock-->
+                            <!--    Dry Sand -->
   
                             <tr>
-                              
-                              
+
+                            
   
                               <td>
                                 <div class="pretty p-image p-plain float-left ">
-                                    <input name="bcs" type="radio" id="bcs0" value="0.11">
+                                    <input name="wob" type="radio" id="dry_sand" value="100">
                                   <div class="state">
                                     <img class="image" src="img/004.png">
-                                    <label>0°</label>
+                                    <label>100</label>
                                   </div>
                                 </div>
                               </td>
-  
+
   
                               <td>
   
-                                  0.110
+                                	0.1650
   
                               </td>
+
+                              
+                              <td>
+                                  Dry Sand
+                                
+                                </td>
+  
   
                              
   
@@ -1060,24 +1068,30 @@
                             </tr>
   
   
-                            <!-- GW GP SW SP-->
+                            <!--  Ordinary (damp) Sand -->
   
                             <tr>
                              
                               <td>
                                 <div class="pretty p-image p-plain float-left">
-                                    <input name="bcs" type="radio" id="bcs1" value="0.108">
+                                    <input name="wob" type="radio" id="ordinary-sand" value="115">
                                   <div class="state">
                                     <img class="image" src="img/004.png">
-                                    <label>30°</label>
+                                    <label>115</label>
                                   </div>
                                 </div>
                               </td>
   
                               <td>
-                                  0.108
+                                  0.1650
   
                               </td>
+
+                              
+                              <td>
+                                  Ordinary (damp) Sand
+                                
+                                </td>
   
   
                               
@@ -1086,17 +1100,17 @@
                             </tr>
   
   
-                            <!-- 	GC GM SC SM sCL sML gCL gML-->
+                            <!--  Wet Sand -->
   
                             <tr>
                               
                               
                               <td>
                                 <div class="pretty p-image p-plain float-left">
-                                    <input name="bcs" type="radio" id="bcs2" value="0.103">
+                                    <input name="wob" type="radio" id="wet_sand" value="120">
                                   <div class="state">
                                     <img class="image" src="img/004.png">
-                                    <label>60°</label>
+                                    <label>120</label>
                                   </div>
                                 </div>
                               </td>
@@ -1104,13 +1118,19 @@
                               
   
   
-                              <td>0.103</td>
+                              <td>	0.1650</td>
+
+                              <td>
+                                  Wet Sand
+                              </td>
+
+                          
   
                                 
   
                             </tr>
   
-                            <!-- CL ML -->
+                            <!-- Damp Clay -->
   
                             <tr>
                               
@@ -1119,10 +1139,10 @@
 
                                   
                                   <div class="pretty p-image p-plain float-left">
-                                      <input name="bcs" type="radio" id="bcs3" value="0.1">
+                                      <input name="wob" type="radio" id="damp_clay" value="120">
                                     <div class="state">
                                       <img class="image" src="img/004.png">
-                                      <label>	Recommended</label>
+                                      <label>120</label>
                                     </div>
                                   </div>
                                 
@@ -1131,23 +1151,27 @@
                                 
     
     
-                                <td>0.100</td>
+                                <td>0.1300</td>
+
+                                <td>
+                                    Damp Clay
+                                </td>
     
                                   
     
                               </tr>
   
-                            <!-- CH MH OH OL Pt -->
+                            <!-- Saturated Clay -->
   
                             <tr>
                               
                               
                                 <td>
                                   <div class="pretty p-image p-plain float-left" >
-                                      <input name="bcs" type="radio" id="bcs4" value="0.096">
+                                      <input name="wob" type="radio" id="saturated_clay" value="130">
                                     <div class="state">
                                       <img class="image" src="img/004.png">
-                                      <label>	90°</label>
+                                      <label>	130 </label>
                                     </div>
                                   </div>
                                 </td>
@@ -1155,11 +1179,17 @@
                                 
     
     
-                                <td>0.096</td>
+                                <td>0.1100</td>
+                                <td>
+                                    Saturated Clay
+                                </td>
     
                                   
     
                               </tr>
+
+
+                              <!-- Saturated Topsoil -->
 
 
                               <tr>
@@ -1167,11 +1197,11 @@
                               
                                   <td>
                                     <div class="pretty p-image p-plain float-left">
-                                        <input name="bcs" type="radio" id="bcs5" value="0.089">
+                                        <input name="wob" type="radio" id="saturated_topsoil" value="115">
                                         
                                       <div class="state">
                                         <img class="image" src="img/004.png">
-                                        <label>120°</label>
+                                        <label>115</label>
                                       </div>
                                     </div>
                                   </td>
@@ -1179,7 +1209,11 @@
                                   
       
       
-                                  <td>0.089</td>
+                                  <td>	0.1500</td>
+
+                                  <td>
+                                      Saturated Topsoil
+                                  </td>
       
                                     
       
@@ -1190,13 +1224,15 @@
                                 <tr>
                               
                               
+
+                                    <!-- Sand & Damp Topsoil -->
                                     <td>
                                       <div class="pretty p-image p-plain float-left">
-                                          <input name="bcs" type="radio" id="bcs6" value="0.085">
+                                          <input name="wob" type="radio" id="sand_and_damp_topsoil" value="100">
                                           
                                         <div class="state">
                                           <img class="image" src="img/004.png">
-                                          <label>150°</label>
+                                          <label>100</label>
                                         </div>
                                       </div>
                                     </td>
@@ -1204,11 +1240,17 @@
                                     
         
         
-                                    <td>0.085</td>
+                                    <td>0.1650</td>
+
+                                    <td>
+                                        Sand & Damp Topsoil
+                                    </td>
         
                                       
         
                                   </tr>
+
+                                  <!-- Granular materials Without Cohesion -->
 
 
 
@@ -1217,11 +1259,11 @@
                               
                                       <td>
                                         <div class="pretty p-image p-plain float-left">
-                                            <input name="bcs" type="radio" id="bcs7" value="0.083">
+                                            <input name="wob" type="radio" id="granular_materials" value="105">
                                         
                                           <div class="state">
                                             <img class="image" src="img/004.png">
-                                            <label>180°</label>
+                                            <label>105</label>
                                           </div>
                                         </div>
                                       </td>
@@ -1229,7 +1271,11 @@
                                       
           
           
-                                      <td>0.083</td>
+                                      <td>0.1924</td>
+
+                                      <td>
+                                          Granular materials Without Cohesion
+                                      </td>
           
                                         
           
@@ -1238,12 +1284,14 @@
 
 
                                     <tr>
+
+                                        <!-- Your Value -->
                               
                               
                                         <td>
                                          
                                           <div class="pretty p-image p-plain float-left" >
-                                              <input  name="bcs" type="radio">
+                                              <input  name="wob" type="radio" id="wob_your_value_option">
                                             <div class="state">
                                               <img class="image" src="img/004.png">
                                               <label>Your Value</label>
@@ -1256,14 +1304,18 @@
             
             
                                         <td>
-                                            <input type="text" class="form-control" id="trench_width" name="trench_width" required="">
+                                            <input type="text" class="form-control" id="wob_your_value_input" name="wob_your_value_input" required="">
                                             <div class="valid-feedback">
                                               Looks good!
                                             </div>
                                             <div class="invalid-feedback">
-                                              Please input Trench width.
+                                              Please input Your value.
                                             </div>
 
+                                        </td>
+
+                                        <td>
+                                            
                                         </td>
             
                                           
@@ -1280,7 +1332,7 @@
   
                       </div>
 
-                </div>
+                
 
                   
 
