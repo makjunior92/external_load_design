@@ -61,7 +61,7 @@
 
                   <div class="p-1 overflow-hidden mb-3" id="lag_factor_option_wrapper">
                     <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                      <input type="radio" id="pressure_pipe" name="time_lag_factor" checked/>
+                      <input type="radio" id="pressure_pipe" name="time_lag_factor_option" value="pressure_pipe" checked/>
                       <div class="state">
                         <img class="image" src="img/002.png">
                         <label>Pressure pipe</label>
@@ -73,7 +73,7 @@
                     <!-- Gravity Sewer Pipe -->
 
                     <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                      <input type="radio" id="gravity_sewer_pipe" name="time_lag_factor" />
+                      <input type="radio" id="gravity_sewer_pipe" name="time_lag_factor_option" value="gravity_sewer_pipe" />
                       <div class="state">
                         <img class="image" src="img/002.png">
                         <label>Gravity Sewer Pipe</label>
@@ -97,7 +97,7 @@
 
                   </div>
 
-                  <div id="garvity_sewer_wrapper" class="pt-3 ">
+                  <div id="gravity_sewer_wrapper" class="pt-3 " style="display:none;">
 
                     <label for="garvity_sewer" style="float:left; font-weight:700;">Choose garvity sewer*</label>
 
@@ -405,9 +405,9 @@
 
                   </div>
 
-                  <div id="psi_for_modulus2_wrapper" class="pt-3 overflow-hidden">
+                  <div id="psi_for_modulus2_wrapper" class="pt-3 overflow-hidden" style="display: none;">
 
-                    <label for="psi_for_modulus2" style="float:left; font-weight:700;">400,000 modulus</label>
+                    <label for="psi_for_modulus2" style="float:left; font-weight:700;">500,000 modulus</label>
                     
                     <select id="psi_for_modulus2" class="browser-default custom-select" required="">
                       <option value="">Choose...</option>
@@ -431,7 +431,7 @@
                   </div>
                   
                   
-                  <div id="psi_for_custom_modulus_wrapper" class="pt-3 overflow-hidden">
+                  <div id="psi_for_custom_modulus_wrapper" class="pt-3 overflow-hidden" style="display: none;">
 
                     <label for="psi_for_custom_modulus" style="float:left; font-weight:700;">custom value</label>
                     <input type="text" class="form-control" id="psi_for_custom_modulus" name="psi_for_custom_modulus" required="">
