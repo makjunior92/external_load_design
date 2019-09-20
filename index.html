@@ -126,7 +126,7 @@
 
                             <td>
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="2" />
+                                <input type="radio" name="soil_group" value="2" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>2</label>
@@ -138,7 +138,7 @@
                             <td>
 
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="3" />
+                                <input type="radio" name="soil_group" value="3" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>3</label>
@@ -150,7 +150,7 @@
                             <td>
 
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="3" />
+                                <input type="radio" name="soil_group" value="3" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>3</label>
@@ -170,7 +170,7 @@
                             <td>GW GP SW SP</td>
                             <td>
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="1.5" />
+                                <input type="radio" name="soil_group" value="1.5" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>1.5</label>
@@ -180,7 +180,7 @@
 
                             <td>
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <input type="radio" name="soil_group" value="2.5" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>2.5</label>
@@ -193,7 +193,7 @@
                             <td>
 
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <input type="radio" name="soil_group" value="2.5" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>2.5</label>
@@ -212,7 +212,7 @@
                             <td> GC GM SC SM sCL sML gCL gML</td>
                             <td>
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="1.5" />
+                                <input type="radio" name="soil_group" value="1.5" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>1.5</label>
@@ -222,7 +222,7 @@
 
                             <td>
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <input type="radio" name="soil_group" value="2.5" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>2.5</label>
@@ -235,7 +235,7 @@
                             <td>
 
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <input type="radio" name="soil_group" value="2.5" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>2.5</label>
@@ -253,7 +253,7 @@
                             <td>CL ML</td>
                             <td>
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="1.5" />
+                                <input type="radio" name="soil_group" value="1.5" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>1.5</label>
@@ -263,7 +263,7 @@
 
                             <td>
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <input type="radio" name="soil_group" value="2.5" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>2.5</label>
@@ -276,7 +276,7 @@
                             <td>
 
                               <div class="pretty p-image p-plain  m-1">
-                                <input type="radio" name="crushed_rock" value="2.5" />
+                                <input type="radio" name="soil_group" value="2.5" />
                                 <div class="state">
                                   <img class="image" src="img/004.png">
                                   <label>2.5</label>
@@ -330,7 +330,7 @@
                 <div id="pipe_stiffness_wrapper" class="mt-5 mb-5  overflow-hidden">
 
 
-                  <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Pipe Stiffness <span id="tl_value" class="ml-4">3.5</span></h3>
+                  <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Pipe Stiffness <span id="pipe_stiffness_value" class="ml-4">46 </span>psi</h3>
 
 
 
@@ -385,7 +385,8 @@
 
                     <label for="psi_for_modulus1" style="float:left; font-weight:700;">400,000 modulus</label>
                     <select id="psi_for_modulus1" class="browser-default custom-select" required="">
-                      <option value="">Choose...</option>
+                      
+                      <option value="0" selected="">Choose option</option>
                       <option value="7">DR 64 (7 psi)</option>
                       <option value="14">DR 51 (14 psi)</option>
                       <option value="26">DR 42 (26 psi)</option>
@@ -410,7 +411,7 @@
                     <label for="psi_for_modulus2" style="float:left; font-weight:700;">500,000 modulus</label>
                     
                     <select id="psi_for_modulus2" class="browser-default custom-select" required="">
-                      <option value="">Choose...</option>
+                      <option value="0" selected="">Choose option</option>
                       <option value="9">DR 64 (9 psi)</option>
                       <option value="18">DR 51 (18 psi)</option>
                       <option value="32">DR 42 (32 psi)</option>
@@ -465,7 +466,7 @@
 
                 <div id="live_load_wrapper">
 
-                    <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Add. Live Load (W <sub>L</sub>) <span id="tl_value" class="ml-4">3.5</span></h3>
+                    <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Add. Live Load (W <sub>L</sub>) <span id="display_live_load_value" class="ml-4">None</span></h3>
                     
                     
                     <div class="p-1 overflow-hidden" id="live_load_option_wrapper">
@@ -475,7 +476,7 @@
                         <!-- No Live Load -->
     
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                          <input type="radio" id="no_live_load" name="live_load" checked/>
+                          <input type="radio" id="no_live_load" name="live_load" value="None" checked/>
                           <div class="state">
                             <img class="image" src="img/002.png">
                             <label>No Live Load</label>
@@ -487,7 +488,7 @@
                         <!-- Single-Wheel Load -->
     
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                          <input type="radio" id="single_wheel_load" name="live_load" />
+                          <input type="radio" id="single_wheel_load" name="live_load" value="Single-Wheel Load"  />
                           <div class="state">
                             <img class="image" src="img/002.png">
                             <label>Single-Wheel Load</label>
@@ -500,7 +501,7 @@
 
                         
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                            <input type="radio" id="two_passing_trucks" name="live_load" />
+                            <input type="radio" id="two_passing_trucks" name="live_load" value="Two Passing Trucks" />
                             <div class="state">
                               <img class="image" src="img/002.png">
                               <label>Two Passing Trucks</label>
@@ -510,7 +511,7 @@
                   <!--Highway-->
     
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                          <input type="radio" id="highway" name="live_load" />
+                          <input type="radio" id="highway" name="live_load" value="H20 Highway" />
                           <div class="state">
                             <img class="image" src="img/002.png">
                             <label>H20 Highway</label>
@@ -520,7 +521,7 @@
                         <!-- E80 Railway -->
 
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                            <input type="radio" id="railway" name="live_load" />
+                            <input type="radio" id="railway" name="live_load" value="E80 Railway" />
                             <div class="state">
                               <img class="image" src="img/002.png">
                               <label>E80 Railway</label>
@@ -530,7 +531,7 @@
                           <!-- HS20 Loading -->
 
                           <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                              <input type="radio" id="hs20_loading" name="live_load" />
+                              <input type="radio" id="hs20_loading" name="live_load" value="HS20 Loading"/>
                               <div class="state">
                                 <img class="image" src="img/002.png">
                                 <label>HS20 Loading </label>
@@ -542,7 +543,7 @@
                              <!-- HS25 Loading -->
 
                           <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                              <input type="radio" id="hs25_loading" name="live_load" />
+                              <input type="radio" id="hs25_loading" name="live_load" value="HS25 Loading" />
                               <div class="state">
                                 <img class="image" src="img/002.png">
                                 <label>HS25 Loading </label>
@@ -554,7 +555,7 @@
                              <!-- HS20 Loading -->
 
                           <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                              <input type="radio" id="coopers_e80" name="live_load" />
+                              <input type="radio" id="coopers_e80" name="live_load" value="Coopers E80 Loading" />
                               <div class="state">
                                 <img class="image" src="img/002.png">
                                 <label>	Coopers E80 Loading </label>
@@ -566,7 +567,7 @@
                              <!-- Coopers E80 Loading -->
 
                           <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                              <input type="radio" id="airport" name="live_load" />
+                              <input type="radio" id="airport" name="live_load" value="Airport"/>
                               <div class="state">
                                 <img class="image" src="img/002.png">
                                 <label>Airport</label>
@@ -678,7 +679,7 @@
                  <div id="bedding_constant" class="mt-5 mb-5  overflow-hidden">
 
                         <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Bedding constant (k)
-                          <span id="show_start_value" class="ml-4">2</span>
+                          <span id="show_constant_value" class="ml-4">0.100</span>
                           
                         </h3>
 
@@ -926,7 +927,7 @@
                                               <td>
                                                
                                                 <div class="pretty p-image p-plain float-left" >
-                                                    <input  name="bcs" type="radio" id="bcs_your_value_option">
+                                                    <input  name="bcs" type="radio" id="bcs_your_value_option" value=".100" checked>
                                                   <div class="state">
                                                     <img class="image" src="img/004.png">
                                                     <label>Your Value</label>
@@ -939,7 +940,7 @@
                   
                   
                                               <td>
-                                                  <input type="text" class="form-control" id="bcs_your_value_input" name="bcs_your_value_input" required="">
+                                                  <input type="text" class="form-control" id="bcs_your_value_input" name="bcs_your_value_input" value="0.100">
                                                   <div class="valid-feedback">
                                                     Looks good!
                                                   </div>

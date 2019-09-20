@@ -67,7 +67,9 @@ var calculateDeflection;
 
 
 var UIController = (function () {
-
+     
+    
+    
 
     return {
 
@@ -75,8 +77,7 @@ var UIController = (function () {
         
      setSectionVisibility: {
 
-
-
+    
             time_lag_factor: {
 
                 display_pressurezed_timeframe: $('#pressure_pipe').on('click', function () {
@@ -144,6 +145,21 @@ var UIController = (function () {
 
             },
 
+            bedding_constant:{
+
+                enable_your_value: $('#bcs_your_value_option').on('click', function(){
+                    $('#bcs_your_value_input').prop('disabled',false);
+                }),
+
+
+
+                disable_your_value: $('#bcs0, #bcs2,#bcs3,#bcs4,#bcs5,#bcs6,#bcs7').on('click', function(){
+                    $('#bcs_your_value_input').prop('disabled',true);
+                }),
+
+            },
+
+
 
 
             natural_or_in_place_soil_modulus: {
@@ -164,7 +180,9 @@ var UIController = (function () {
 
                 })
 
-            }
+            },
+
+
 
 
 
@@ -173,13 +191,171 @@ var UIController = (function () {
 
         // End:: section visibility
 
-
+        
+        
+        
+        
+        
+        
+        
         getInput: function () {
            
             return {
                 time_lag_factor_option: $('input[name=time_lag_factor_option]:checked').val()
             };
         },
+
+
+
+
+        
+        // Start:: display user input
+
+       display_input:{
+
+                    display_time_lag_factor_input: {
+
+                        display_pressurized_timeframe_value : $('#pressurized_timeframe').on('change', function(){
+                
+                            var pressurized_timeframe =  $('#pressurized_timeframe').val();
+                            $('#tl_value').text(pressurized_timeframe);
+                            
+                    
+                            
+                        }),
+    
+    
+                        display_gravity_sewer_value:  $('input[name=soil_group]').on('click', function(){
+                        
+                            var gravity_sewer =  $('input[name=soil_group]:checked').val();
+                            $('#tl_value').text(gravity_sewer);
+                            
+                    
+                            
+                        }),
+
+                    },
+
+
+
+
+
+                    display_pipe_stiffness_input:{
+
+                        display_psi_for_modulus1_value : $('#psi_for_modulus1').on('change', function(){
+                
+                            var modulus1_value =  $('#psi_for_modulus1').val();
+                            $('#pipe_stiffness_value').text(modulus1_value);
+                            
+                    
+                            
+                        }),
+
+                        display_psi_for_modulus2_value :$('#psi_for_modulus2').on('change', function(){
+                
+                            var modulus2_value =  $('#psi_for_modulus2').val();
+                            $('#pipe_stiffness_value').text(modulus2_value);
+                            
+                    
+                            
+                        }),
+
+                        display_psi_for_custom_modulus :$('#psi_for_custom_modulus').on('keyup', function(){
+                
+                            var custom_modulus_value =  $('#psi_for_custom_modulus').val();
+                            $('#pipe_stiffness_value').text(custom_modulus_value);
+                            
+                    
+                            
+                        }),
+    
+                    },
+
+
+                    display_live_load_input:{
+
+                        live_load_value:  $('input[name=live_load]').on('click', function(){
+                        
+                            var live_load =  $('input[name=live_load]:checked').val();
+                            $('#display_live_load_value').text(live_load);
+                            
+                    
+                            
+                        }),
+
+                    },
+
+
+                    display_depth_of_burial_input:{
+
+                        
+                        display_start : $('#start').on('keyup', function(){
+                
+                            var start =  $('#start').val();
+                            $('#show_start_value').text(start);
+                            
+                    
+                            
+                        }),
+
+                        display_end : $('#end').on('keyup', function(){
+                
+                            var end =  $('#end').val();
+                            $('#show_end_value').text(end);
+                            
+                    
+                            
+                        }),
+
+
+                        display_increment : $('#increment').on('keyup', function(){
+                
+                            var increment =  $('#increment').val();
+                            $('#show_increment_value').text(increment);
+                            
+                    
+                            
+                        }),
+
+
+
+
+                    },
+
+
+
+                    display_bedding_constant:{
+
+                        bedding_angle : $('input[name=bcs]').on('click',function(){
+
+                            var constant_value = $('input[name=bcs]:checked').val();
+                            $('#show_constant_value').text(constant_value);
+                            $('#bcs_your_value_input').val(constant_value);
+                        }),
+
+                        your_value: $('#bcs_your_value_input').on('keyup', function(){
+                
+                            var your_value =  $('#bcs_your_value_input').val();
+                            $('#show_constant_value').text(your_value );
+                            
+                    
+                            
+                        }),
+                        
+                        
+                        
+                    },
+
+
+
+
+        
+
+    },
+
+     // End :: display user input
+
+
 
 
 
@@ -212,10 +388,8 @@ var controller = (function (UICtrl) {
 
 
 
-// (function setEvents(){
 
-
-//     // showing and hiding divs
+    // showing and hiding divs
 
 //     $('#pressure_pipe').on('click', function(){
 
@@ -292,8 +466,24 @@ var controller = (function (UICtrl) {
 //     });
 
 
+// // showing user input
+//     $('#pressurized_timeframe').on('change', function(){
+    
+//        var pressurized_timeframe =  $('#pressurized_timeframe').val();
+//        $('#tl_value').text(pressurized_timeframe);
+       
 
+       
+//     });
 
+//     $('input[name=soil_group]').on('click', function(){
+    
+//         var gravity_sewer =  $('input[name=soil_group]:checked').val();
+//         $('#tl_value').text(gravity_sewer);
+        
+ 
+        
+//      });
 
     
     
@@ -302,5 +492,5 @@ var controller = (function (UICtrl) {
     
     
     
-// })();
+
 
