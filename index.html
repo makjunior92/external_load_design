@@ -476,7 +476,7 @@
                         <!-- No Live Load -->
     
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                          <input type="radio" id="no_live_load" name="live_load" value="None" checked/>
+                          <input type="radio" id="no_live_load" name="live_load" class="hide_max_wheel_and_pipe_diameter_wrapper" value="None" checked/>
                           <div class="state">
                             <img class="image" src="img/002.png">
                             <label>No Live Load</label>
@@ -488,7 +488,7 @@
                         <!-- Single-Wheel Load -->
     
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                          <input type="radio" id="single_wheel_load" name="live_load" value="Single-Wheel Load"  />
+                          <input type="radio" id="single_wheel_load" name="live_load" class="show_max_wheel_and_pipe_diameter_wrapper" value="Single-Wheel Load"  />
                           <div class="state">
                             <img class="image" src="img/002.png">
                             <label>Single-Wheel Load</label>
@@ -501,7 +501,7 @@
 
                         
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                            <input type="radio" id="two_passing_trucks" name="live_load" value="Two Passing Trucks" />
+                            <input type="radio" id="two_passing_trucks" name="live_load" class="show_max_wheel_and_pipe_diameter_wrapper" value="Two Passing Trucks" />
                             <div class="state">
                               <img class="image" src="img/002.png">
                               <label>Two Passing Trucks</label>
@@ -511,7 +511,7 @@
                   <!--Highway-->
     
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                          <input type="radio" id="highway" name="live_load" value="H20 Highway" />
+                          <input type="radio" id="highway" name="live_load" class="hide_max_wheel_and_pipe_diameter_wrapper" value="H20 Highway" />
                           <div class="state">
                             <img class="image" src="img/002.png">
                             <label>H20 Highway</label>
@@ -521,7 +521,7 @@
                         <!-- E80 Railway -->
 
                         <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                            <input type="radio" id="railway" name="live_load" value="E80 Railway" />
+                            <input type="radio" id="railway" name="live_load" class="hide_max_wheel_and_pipe_diameter_wrapper" value="E80 Railway" />
                             <div class="state">
                               <img class="image" src="img/002.png">
                               <label>E80 Railway</label>
@@ -531,7 +531,7 @@
                           <!-- HS20 Loading -->
 
                           <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                              <input type="radio" id="hs20_loading" name="live_load" value="HS20 Loading"/>
+                              <input type="radio" id="hs20_loading" name="live_load" class="hide_max_wheel_and_pipe_diameter_wrapper" value="HS20 Loading"/>
                               <div class="state">
                                 <img class="image" src="img/002.png">
                                 <label>HS20 Loading </label>
@@ -543,7 +543,7 @@
                              <!-- HS25 Loading -->
 
                           <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                              <input type="radio" id="hs25_loading" name="live_load" value="HS25 Loading" />
+                              <input type="radio" id="hs25_loading" name="live_load" class="hide_max_wheel_and_pipe_diameter_wrapper" value="HS25 Loading" />
                               <div class="state">
                                 <img class="image" src="img/002.png">
                                 <label>HS25 Loading </label>
@@ -555,7 +555,7 @@
                              <!-- HS20 Loading -->
 
                           <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                              <input type="radio" id="coopers_e80" name="live_load" value="Coopers E80 Loading" />
+                              <input type="radio" id="coopers_e80" name="live_load" class="hide_max_wheel_and_pipe_diameter_wrapper" value="Coopers E80 Loading" />
                               <div class="state">
                                 <img class="image" src="img/002.png">
                                 <label>	Coopers E80 Loading </label>
@@ -567,7 +567,7 @@
                              <!-- Coopers E80 Loading -->
 
                           <div class="pretty p-image p-plain float-left mr-4 mt-3">
-                              <input type="radio" id="airport" name="live_load" value="Airport"/>
+                              <input type="radio" id="airport" name="live_load" class="hide_max_wheel_and_pipe_diameter_wrapper" value="Airport"/>
                               <div class="state">
                                 <img class="image" src="img/002.png">
                                 <label>Airport</label>
@@ -714,7 +714,7 @@
         
                                     <td>
                                       <div class="pretty p-image p-plain float-left ">
-                                          <input name="bcs" type="radio" id="bcs0" value="0.11">
+                                          <input name="bcs" type="radio" id="bcs0" class="bcs_dis_yv" value="0.11">
                                         <div class="state">
                                           <img class="image" src="img/004.png">
                                           <label>0°</label>
@@ -741,7 +741,7 @@
                                    
                                     <td>
                                       <div class="pretty p-image p-plain float-left">
-                                          <input name="bcs" type="radio" id="bcs1" value="0.108">
+                                          <input name="bcs" type="radio" id="bcs1" class="bcs_dis_yv" value="0.108">
                                         <div class="state">
                                           <img class="image" src="img/004.png">
                                           <label>30°</label>
@@ -768,7 +768,7 @@
                                     
                                     <td>
                                       <div class="pretty p-image p-plain float-left">
-                                          <input name="bcs" type="radio" id="bcs2" value="0.103">
+                                          <input name="bcs" type="radio" id="bcs2" class="bcs_dis_yv" value="0.103">
                                         <div class="state">
                                           <img class="image" src="img/004.png">
                                           <label>60°</label>
@@ -794,7 +794,7 @@
       
                                         
                                         <div class="pretty p-image p-plain float-left">
-                                            <input name="bcs" type="radio" id="bcs3" value="0.1">
+                                            <input name="bcs" type="radio" id="bcs3"  class="bcs_dis_yv" value="0.1">
                                           <div class="state">
                                             <img class="image" src="img/004.png">
                                             <label>	Recommended</label>
@@ -819,7 +819,7 @@
                                     
                                       <td>
                                         <div class="pretty p-image p-plain float-left" >
-                                            <input name="bcs" type="radio" id="bcs4" value="0.096">
+                                            <input name="bcs" type="radio" id="bcs4" class="bcs_dis_yv" value="0.096">
                                           <div class="state">
                                             <img class="image" src="img/004.png">
                                             <label>	90°</label>
@@ -844,7 +844,7 @@
                                     
                                         <td>
                                           <div class="pretty p-image p-plain float-left">
-                                              <input name="bcs" type="radio" id="bcs5" value="0.089">
+                                              <input name="bcs" type="radio" id="bcs5" class="bcs_dis_yv" value="0.089">
                                               
                                             <div class="state">
                                               <img class="image" src="img/004.png">
@@ -872,7 +872,7 @@
                                     
                                           <td>
                                             <div class="pretty p-image p-plain float-left">
-                                                <input name="bcs" type="radio" id="bcs6" value="0.085">
+                                                <input name="bcs" type="radio" id="bcs6" class="bcs_dis_yv" value="0.085">
                                                 
                                               <div class="state">
                                                 <img class="image" src="img/004.png">
@@ -899,7 +899,7 @@
                                     
                                             <td>
                                               <div class="pretty p-image p-plain float-left">
-                                                  <input name="bcs" type="radio" id="bcs7" value="0.083">
+                                                  <input name="bcs" type="radio" id="bcs7" class="bcs_dis_yv" value="0.083">
                                               
                                                 <div class="state">
                                                   <img class="image" src="img/004.png">
@@ -1046,7 +1046,7 @@
   
                               <td>
                                 <div class="pretty p-image p-plain float-left ml-5 ">
-                                    <input name="wob" type="radio" id="dry_sand" value="100">
+                                    <input name="wob" type="radio" id="wob0" value="100">
                                   <div class="state">
                                     <img class="image" src="img/004.png">
                                     <label>100</label>
@@ -1080,7 +1080,7 @@
                              
                               <td>
                                 <div class="pretty p-image p-plain float-left ml-5">
-                                    <input name="wob" type="radio" id="ordinary-sand" value="115">
+                                    <input name="wob" type="radio" id="ordinary-sand" class="wob_dis_yv" value="115">
                                   <div class="state">
                                     <img class="image" src="img/004.png">
                                     <label>115</label>
@@ -1113,7 +1113,7 @@
                               
                               <td>
                                 <div class="pretty p-image p-plain float-left ml-5">
-                                    <input name="wob" type="radio" id="wet_sand" value="120">
+                                    <input name="wob" type="radio" id="wet_sand" class="wob_dis_yv" value="120">
                                   <div class="state">
                                     <img class="image" src="img/004.png">
                                     <label>120</label>
@@ -1145,7 +1145,7 @@
 
                                   
                                   <div class="pretty p-image p-plain float-left ml-5">
-                                      <input name="wob" type="radio" id="damp_clay" value="120">
+                                      <input name="wob" type="radio" id="damp_clay" class="wob_dis_yv" value="120">
                                     <div class="state">
                                       <img class="image" src="img/004.png">
                                       <label>120</label>
@@ -1174,7 +1174,7 @@
                               
                                 <td>
                                   <div class="pretty p-image p-plain float-left ml-5" >
-                                      <input name="wob" type="radio" id="saturated_clay" value="130">
+                                      <input name="wob" type="radio" id="saturated_clay" class="wob_dis_yv" value="130">
                                     <div class="state">
                                       <img class="image" src="img/004.png">
                                       <label>	130 </label>
@@ -1203,7 +1203,7 @@
                               
                                   <td>
                                     <div class="pretty p-image p-plain float-left ml-5">
-                                        <input name="wob" type="radio" id="saturated_topsoil" value="115">
+                                        <input name="wob" type="radio" id="saturated_topsoil"  class="wob_dis_yv" value="115">
                                         
                                       <div class="state">
                                         <img class="image" src="img/004.png">
@@ -1234,7 +1234,7 @@
                                     <!-- Sand & Damp Topsoil -->
                                     <td>
                                       <div class="pretty p-image p-plain float-left ml-5">
-                                          <input name="wob" type="radio" id="sand_and_damp_topsoil" value="100">
+                                          <input name="wob" type="radio" id="sand_and_damp_topsoil" class="wob_dis_yv" value="100">
                                           
                                         <div class="state">
                                           <img class="image" src="img/004.png">
@@ -1265,7 +1265,7 @@
                               
                                       <td>
                                         <div class="pretty p-image p-plain float-left ml-5">
-                                            <input name="wob" type="radio" id="granular_materials" value="105">
+                                            <input name="wob" type="radio" id="granular_materials" class="wob_dis_yv" value="105">
                                         
                                           <div class="state">
                                             <img class="image" src="img/004.png">
@@ -1297,7 +1297,7 @@
                                         <td>
                                          
                                           <div class="pretty p-image p-plain float-left ml-5" >
-                                              <input  name="wob" type="radio" id="wob_your_value_option">
+                                              <input  name="wob" type="radio" id="wob_your_value_option"  value="115" checked>
                                             <div class="state">
                                               <img class="image" src="img/004.png">
                                               <label>Your Value</label>
@@ -1310,7 +1310,7 @@
             
             
                                         <td>
-                                            <input type="text" class="form-control" id="wob_your_value_input" name="wob_your_value_input" required="">
+                                            <input type="text" class="form-control" id="wob_your_value_input" name="wob_your_value_input" value="115" >
                                             <div class="valid-feedback">
                                               Looks good!
                                             </div>
@@ -1366,7 +1366,7 @@
                 
 
                  <h3 class="text-left" style="font-weight:700; display:block; color:#4285f4;">Embedment Soil Modulus (E’b) 
-                  <span id="show_combined_unit_weight" class="ml-4">6000</span> lbs/in<sup>2</sup>
+                  <span id="show_eb" class="ml-4">1000</span> lbs/in<sup>2</sup>
                   
                   
                 </h3>
@@ -1414,7 +1414,7 @@
                           <td>
 
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="3">
+                              <input type="radio" name="embedment_soil" value="6000">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>6000</label>
@@ -1426,7 +1426,7 @@
                           <td>
 
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="3">
+                              <input type="radio" name="embedment_soil" value="6000">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>6000</label>
@@ -1446,7 +1446,7 @@
                           <td>GW GP SW SP</td>
                           <td>
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="1.5">
+                              <input type="radio" name="embedment_soil" value="500">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>500</label>
@@ -1456,7 +1456,7 @@
 
                           <td>
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="2.5">
+                              <input type="radio" name="embedment_soil" value="2000">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>2000</label>
@@ -1469,7 +1469,7 @@
                           <td>
 
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="2.5">
+                              <input type="radio" name="embedment_soil" value="4000">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>4000</label>
@@ -1488,7 +1488,7 @@
                           <td> GC GM SC SM sCL sML gCL gML</td>
                           <td>
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="1.5">
+                              <input type="radio" name="embedment_soil" value="200">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>200</label>
@@ -1498,7 +1498,7 @@
 
                           <td>
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="2.5">
+                              <input type="radio" name="embedment_soil" value="1000">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>1000</label>
@@ -1511,7 +1511,7 @@
                           <td>
 
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="2.5">
+                              <input type="radio" name="embedment_soil" value="2500">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>2500</label>
@@ -1529,7 +1529,7 @@
                           <td>CL ML</td>
                           <td>
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="1.5">
+                              <input type="radio" name="embedment_soil" value="100">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>100</label>
@@ -1539,7 +1539,7 @@
 
                           <td>
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="2.5">
+                              <input type="radio" name="embedment_soil" value="400">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>400</label>
@@ -1552,7 +1552,7 @@
                           <td>
 
                             <div class="pretty p-image p-plain  m-1">
-                              <input type="radio" name="embedment_soil" value="2.5">
+                              <input type="radio" name="embedment_soil" value="1500">
                               <div class="state">
                                 <img class="image" src="img/004.png">
                                 <label>1500</label>
@@ -1584,7 +1584,7 @@
 
               <div>
                   <label for="eb_for_bedding_soil" style="float:left; font-weight:700;" class="mt-3"> E'b for bedding soil</label>
-                  <input type="text" class="form-control" id="eb_for_bedding_soil" name="eb_for_bedding_soil" value="6000">
+                  <input type="text" class="form-control" id="eb_for_bedding_soil" name="eb_for_bedding_soil" value="1000">
               </div>
         
 
