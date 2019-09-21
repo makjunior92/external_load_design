@@ -203,7 +203,13 @@ var UIController = (function () {
                     $('#spt_table_wrapper').show();
 
 
-                })
+                }),
+
+
+                uncheck_radio: $('#en_for_native_soil').click(function () {
+                    $('input[name=en]:checked').prop("checked", false);
+          
+                }),
 
             },
 
@@ -406,7 +412,7 @@ var UIController = (function () {
                     $('#eb_for_bedding_soil').val(eb);
                 }),
 
-                your_value: $('#eb_for_bedding_soil').on('keyup', function () {
+                eb_for_bedding_soil: $('#eb_for_bedding_soil').on('keyup', function () {
 
                     var eb_for_bedding_soil = $('#eb_for_bedding_soil').val();
                     $('#show_eb').text(eb_for_bedding_soil );
@@ -417,6 +423,46 @@ var UIController = (function () {
 
 
             },
+
+
+
+            display_en: {
+
+                en: $('input[name=en]').on('click', function () {
+ 
+                     var en = $('input[name=en]:checked').val();
+                     $('#show_en').text(en);
+                     $('#en_for_native_soil').val(en);
+                 }),
+ 
+                 en_for_native_soil : $('#en_for_native_soil').on('keyup', function () {
+ 
+                     var en_for_native_soil = $('#en_for_native_soil').val();
+                     $('#show_en').text(en_for_native_soil);
+ 
+ 
+ 
+                 }),
+ 
+ 
+             },
+
+
+
+             display_pipe_diameter: $('#pipe_diameter').on('change', function () {
+
+                var pipe_diameter = $('#pipe_diameter').val();
+                $('#show_pipe_diameter').text(pipe_diameter );
+
+
+
+            }),
+
+            display_trench_width: $('#trench_width').on('keyup',function(){
+                var trench_width = $('#trench_width').val();
+                $('#show_trench_width').text(trench_width);
+            }),
+             
 
 
 
