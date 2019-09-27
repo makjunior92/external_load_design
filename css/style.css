@@ -1,4 +1,9 @@
  
+@font-face { font-family: Myriad Pro Condensed; 
+    src: url('../font/Myriad Pro Condensed.ttf');
+ } 
+
+
 
 .seperator{
     margin-top: 50px;
