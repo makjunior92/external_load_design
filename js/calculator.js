@@ -129,21 +129,21 @@ var UIController = (function () {
             },
 
 
-            liveLoad: {
+            // liveLoad: {
 
-                hide_max_wheel_and_pipe_diameter: $('.hide_max_wheel_and_pipe_diameter_wrapper').on('click', function () {
+            //     hide_max_wheel_and_pipe_diameter: $('.hide_max_wheel_and_pipe_diameter_wrapper').on('click', function () {
 
-                    $('#max_wheel_and_pipe_diameter_wrapper').hide();
+            //         $('#max_wheel_and_pipe_diameter_wrapper').hide();
 
-                }),
+            //     }),
 
-                display_max_wheel_and_pipe_diameter: $('.show_max_wheel_and_pipe_diameter_wrapper').on('click', function () {
+            //     display_max_wheel_and_pipe_diameter: $('.show_max_wheel_and_pipe_diameter_wrapper').on('click', function () {
 
-                    $('#max_wheel_and_pipe_diameter_wrapper').show();
+            //         $('#max_wheel_and_pipe_diameter_wrapper').show();
 
-                })
+            //     })
 
-            },
+            // },
 
             bedding_constant: {
 
@@ -320,33 +320,33 @@ var UIController = (function () {
             display_depth_of_burial_input: {
 
 
-                display_start: $('#start').on('keyup', function () {
+                display_depth_of_burial_input: $('#depth_of_burial').on('keyup', function () {
 
-                    var start = $('#start').val();
-                    $('#show_start_value').text(start);
-
-
-
-                }),
-
-                display_end: $('#end').on('keyup', function () {
-
-                    var end = $('#end').val();
-                    $('#show_end_value').text(end);
+                    var depth_of_burial = $('#depth_of_burial').val();
+                    $('#show_depth_of_burial').text(depth_of_burial);
 
 
 
                 }),
 
+                // display_end: $('#end').on('keyup', function () {
 
-                display_increment: $('#increment').on('keyup', function () {
-
-                    var increment = $('#increment').val();
-                    $('#show_increment_value').text(increment);
-
+                //     var end = $('#end').val();
+                //     $('#show_end_value').text(end);
 
 
-                }),
+
+                // }),
+
+
+                // display_increment: $('#increment').on('keyup', function () {
+
+                //     var increment = $('#increment').val();
+                //     $('#show_increment_value').text(increment);
+
+
+
+                // }),
 
 
 
