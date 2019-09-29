@@ -62,7 +62,66 @@
 
 
 
-var calculateDeflection;
+var calculateDeflection = (function(){
+
+  var w_sub_l = function(){
+    
+    
+    var live_load_category = $('input[name=live_load]:checked').val();
+    var depth_of_burial = parseInt($('#show_depth_of_burial').val());
+    
+    if(live_load_category == 'HS20 Loading' || live_load_category == 'HS25 Loading'){
+
+        var wheel_load = 0;
+
+        if(live_load_category == 'HS20 Loading'){
+            wheel_load = 16000;
+        }
+
+        if(live_load_category == 'HS25 Loading'){
+            wheel_load = 20000;
+        }
+
+        
+
+        var LLDF = 1 ;
+
+        var IF = 1 + 0.33 * (96 - depth_of_burial * 12) / 96 ;
+
+        IF < 1 ? 1 : IF;
+        
+        var H_int = (72 - 20 ) / LLDF ;
+
+        var L1 = 10 + depth_of_burial * LLDF ; 
+
+        var L2 = 0 ;
+
+        if(depth_of_burial * 12 < H_int){
+            
+            L2 = 20 + LLDF * depth_of_burial * 12 ;
+        }
+        else{
+            L2 = (20 + 72 + (LLDF * depth_of_burial * 12)/12);
+        }
+
+        var live_load = 1.2 * wheel_load * (IF /L1/ L2);
+
+        return live_load ;
+
+    }
+};
+
+
+
+
+return{
+    w_sub_l : w_sub_l,
+
+    
+}
+    
+
+})();
 
 
 
@@ -502,123 +561,77 @@ var UIController = (function () {
 
 
 
-var controller = (function (UICtrl) {
+var controller = (function (UICtrl, calcDef) {
 
     $('#calculate').on('click', function () {
 
-        console.log(UICtrl.getInput());
+       // console.log(calcDef);
 
 
     });
 
-})(UIController);
+})(UIController , calculateDeflection);
 
 
 
+$('#calculate').on('click', function () {
 
+    var live_load_category = $('input[name=live_load]:checked').val();
+    var depth_of_burial = parseInt($('#show_depth_of_burial').text());
 
+    console.log( "depth of burial: " + depth_of_burial);
+    console.log("live load category : " + live_load_category );
+       
+       if(live_load_category == 'HS20 Loading' || live_load_category == 'HS25 Loading'){
+   
+           var wheel_load = 0;
+   
+           if(live_load_category == 'HS20 Loading'){
+               wheel_load = 16000;
+           }
+   
+           if(live_load_category == 'HS25 Loading'){
+               wheel_load = 20000;
+           }
+   
+           
+   
+           var LLDF = 1 ;
+   
+           var IF = 1 + 0.33 * (96 - depth_of_burial * 12) / 96 ;
+   
+           IF < 1 ? 1 : IF;
+           
+           var H_int = (72 - 20 ) / LLDF ;
+   
+           var L1 = 10 + depth_of_burial * LLDF * 12 ; 
+   
+           var L2 = 0 ;
+   
+           if(depth_of_burial * 12 < H_int){
+               
+               L2 = 20 + LLDF * depth_of_burial * 12 ;
+           }
+           else{
+               L2 = (20 + 72 + LLDF * depth_of_burial * 12)/2;
+           }
+   
+           var live_load = 1.2 * wheel_load * (IF /L1/ L2);
 
+           console.log("H int : " + H_int);
+           console.log("Wheel load : "+ wheel_load);
 
-    // showing and hiding divs
+           console.log("IF: " + IF);
+           console.log("LLDF: " + LLDF);
+           console.log("L1: " + L1);
+           console.log("L2: " + L2);
+   
+           console.log("Live load : "+live_load);
 
-//     $('#pressure_pipe').on('click', function(){
+        }
+   
 
-//         $('#gravity_sewer_wrapper').hide();
-//         $('#pressurized_timeframe_wrapper').show();
-
-//     });
-
-
-
-
-//     $('#gravity_sewer_pipe').on('click', function(){
-
-//         $('#pressurized_timeframe_wrapper').hide();
-//         $('#gravity_sewer_wrapper').show();
-
-//     });
-
-
-//     $('#modulus1').on('click', function(){
-
-//         $('#psi_for_modulus1_wrapper').show();
-//         $('#psi_for_modulus2_wrapper').hide();
-//         $('#psi_for_custom_modulus_wrapper').hide();
-
-//     });
-
-
-//     $('#modulus2').on('click', function(){
-
-//         $('#psi_for_modulus1_wrapper').hide();
-//         $('#psi_for_modulus2_wrapper').show();
-//         $('#psi_for_custom_modulus_wrapper').hide();
-
-//     });
-
-//     $('#custom_modulus').on('click', function(){
-
-//         $('#psi_for_modulus1_wrapper').hide();
-//         $('#psi_for_modulus2_wrapper').hide();
-//         $('#psi_for_custom_modulus_wrapper').show();
-
-//     });
-
-
-//     $('#no_live_load, #highway, #railway, #hs20_loading, #hs25_loading, #coopers_e80, #airport').on('click', function(){
-
-//         $('#max_wheel_and_pipe_diameter_wrapper').hide();
-
-//     });
-
-//     $('#single_wheel_load, #two_passing_trucks').on('click', function(){
-
-//         $('#max_wheel_and_pipe_diameter_wrapper').show();
-
-//     });
-
-
-//     $('#unconfined_compressive_strength').on('click', function(){
-
-//         $('#ucs_table_wrapper').show();
-//         $('#spt_table_wrapper').hide();
-
-
-//     });
-
-
-//     $('#spt').on('click', function(){
-
-//         $('#ucs_table_wrapper').hide();
-//         $('#spt_table_wrapper').show();
-
-
-//     });
-
-
-// // showing user input
-//     $('#pressurized_timeframe').on('change', function(){
-
-//        var pressurized_timeframe =  $('#pressurized_timeframe').val();
-//        $('#tl_value').text(pressurized_timeframe);
-
-
-
-//     });
-
-//     $('input[name=soil_group]').on('click', function(){
-
-//         var gravity_sewer =  $('input[name=soil_group]:checked').val();
-//         $('#tl_value').text(gravity_sewer);
-
-
-
-//      });
-
-
-
-
-
+ });
 
 
 
