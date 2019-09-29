@@ -629,11 +629,36 @@ $('#calculate').on('click', function () {
            console.log("Live load : "+live_load);
 
         }
+
+        if(live_load_category == 'Coopers E80 Loading'){
+            
+            var IF_table = [];
+            var IF;
+            var C;
+
+            for ( var x = 1.4 ; x >0.95 ; x = x - 0.04){
+                IF_table.push(x);
+            }
+
+            if(depth_of_burial >=0 && depth_of_burial <=10 ){
+           
+                IF = (IF_table[depth_of_burial]).toFixed(2);
+            }
+            else{
+
+                IF = 1.00;
+
+            }
+
+            console.log("IF Table: " + IF_table);
+            console.log("IF: " + IF)
+
+
+
+
+        }
    
 
  });
-
-
-
 
 
