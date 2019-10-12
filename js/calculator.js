@@ -64,61 +64,166 @@
 
 var calculateDeflection = (function(){
 
-  var w_sub_l = function(){
+//   var w_sub_l = function(){
+
+//       var live_load = 0;
+//       var live_load_category = $('input[name=live_load]:checked').val();
+//       var depth_of_burial = parseInt($('#show_depth_of_burial').text());
+
+//       console.log("depth of burial: " + depth_of_burial);
+//       console.log("live load category : " + live_load_category);
+
+
+//       if (live_load_category == 'HS20 Loading' || live_load_category == 'HS25 Loading') {
+
+//           var wheel_load = 0;
+
+//           if (live_load_category == 'HS20 Loading') {
+//               wheel_load = 16000;
+//           }
+
+//           if (live_load_category == 'HS25 Loading') {
+//               wheel_load = 20000;
+//           }
+
+
+
+//           var LLDF = 1;
+
+//           var IF = 1 + 0.33 * (96 - depth_of_burial * 12) / 96;
+
+//           IF < 1 ? 1 : IF;
+
+//           var H_int = (72 - 20) / LLDF;
+
+//           var L1 = 10 + depth_of_burial * LLDF * 12;
+
+//           var L2 = 0;
+
+//           if (depth_of_burial * 12 < H_int) {
+
+//               L2 = 20 + LLDF * depth_of_burial * 12;
+//           }
+//           else {
+//               L2 = (20 + 72 + LLDF * depth_of_burial * 12) / 2;
+//           }
+
+//           live_load = 1.2 * wheel_load * (IF / L1 / L2);
+
+//           console.log("H int : " + H_int);
+//           console.log("Wheel load : " + wheel_load);
+
+//           console.log("IF: " + IF);
+//           console.log("LLDF: " + LLDF);
+//           console.log("L1: " + L1);
+//           console.log("L2: " + L2);
+
+//           console.log("Live load : " + live_load);
+
+//       }
+
+
+
+//       if (live_load_category == 'E80 Railway') {
+
+//           var IF_table = [];
+//           var IF;
+//           var C;
+//           var A = 10;
+//           var B = 4;
+
+//           var H = depth_of_burial;
+
+//           for (var x = 1.4; x > 0.95; x = x - 0.04) {
+//               IF_table.push(x);
+//           }
+
+//           if (depth_of_burial >= 0 && depth_of_burial <= 10) {
+
+//               IF = (IF_table[depth_of_burial]).toFixed(2);
+//           }
+//           else {
+
+//               IF = 1.00;
+
+//           }
+
+
+
+
+//           var term1 = (2 / Math.PI);
+
+//           var term2 = H * Math.sqrt((Math.pow(A, 2) + Math.pow(B, 2) + Math.pow(H, 2)) / ((Math.pow(A, 2) + Math.pow(H, 2)) * (Math.pow(B, 2) + Math.pow(H, 2))));
+
+//           var term3 = (A * B * H) / Math.sqrt(Math.pow(A, 2) + Math.pow(B, 2) + Math.pow(H, 2));
+
+//           var term4 = ((1 / (Math.pow(A, 2) + Math.pow(H, 2))) + (1 / (Math.pow(B, 2) + Math.pow(H, 2))));
+
+
+//           C = 1 - term1 * ((Math.asin(term2)) - (term3 * term4));
+
+//           live_load = C * 14.0625 * IF;
+
+
+
+//           console.log("C: " + C);
+
+//           console.log("IF Table: " + IF_table);
+//           console.log("IF: " + IF);
+
+//           console.log("live load: " + live_load);
+
+
+
+
+
+
+//       }
+
+//       if (live_load_category == 'None') {
+//           live_load = 0;
+//           console.log("live load: " + live_load);
+//       }
+
+
+//       return live_load;
+
+
+    
+// };
+
+
+
+
+// var time_lag_factor = function(){
+
+
+//     var tl = parseFloat($('#tl_value').text());
+//     console.log(tl);
+//      return tl;
+
+
+// };
+
+
+
+
+// return{
     
     
-    var live_load_category = $('input[name=live_load]:checked').val();
-    var depth_of_burial = parseInt($('#show_depth_of_burial').val());
-    
-    if(live_load_category == 'HS20 Loading' || live_load_category == 'HS25 Loading'){
+//     result : function(){
 
-        var wheel_load = 0;
+      
 
-        if(live_load_category == 'HS20 Loading'){
-            wheel_load = 16000;
-        }
-
-        if(live_load_category == 'HS25 Loading'){
-            wheel_load = 20000;
-        }
-
-        
-
-        var LLDF = 1 ;
-
-        var IF = 1 + 0.33 * (96 - depth_of_burial * 12) / 96 ;
-
-        IF < 1 ? 1 : IF;
-        
-        var H_int = (72 - 20 ) / LLDF ;
-
-        var L1 = 10 + depth_of_burial * LLDF ; 
-
-        var L2 = 0 ;
-
-        if(depth_of_burial * 12 < H_int){
+//         return{
             
-            L2 = 20 + LLDF * depth_of_burial * 12 ;
-        }
-        else{
-            L2 = (20 + 72 + (LLDF * depth_of_burial * 12)/12);
-        }
+//              w_sub_l, time_lag_factor
+//         }
 
-        var live_load = 1.2 * wheel_load * (IF /L1/ L2);
-
-        return live_load ;
-
-    }
-};
-
-
-
-
-return{
-    w_sub_l : w_sub_l,
+//     },
 
     
-}
+// }
     
 
 })();
@@ -188,21 +293,19 @@ var UIController = (function () {
             },
 
 
-            // liveLoad: {
+            liveLoad: {
 
-            //     hide_max_wheel_and_pipe_diameter: $('.hide_max_wheel_and_pipe_diameter_wrapper').on('click', function () {
+                enable_custom_live_load: $('#custom_live_load_option').on('click', function () {
+                    $('#custom_live_load_input').prop('disabled', false);
+                }),
 
-            //         $('#max_wheel_and_pipe_diameter_wrapper').hide();
 
-            //     }),
 
-            //     display_max_wheel_and_pipe_diameter: $('.show_max_wheel_and_pipe_diameter_wrapper').on('click', function () {
+                disable_custom_live_load: $('.disable_custom_live_load_input').on('click', function () {
+                    $('#custom_live_load_input').prop('disabled', true);
+                }),
 
-            //         $('#max_wheel_and_pipe_diameter_wrapper').show();
-
-            //     })
-
-            // },
+            },
 
             bedding_constant: {
 
@@ -218,7 +321,7 @@ var UIController = (function () {
 
             },
 
-            combined_unit: {
+            w_sub_e: {
 
                 enable_your_value: $('#wob_your_value_option').on('click', function () {
                     $('#wob_your_value_input').prop('disabled', false);
@@ -291,7 +394,24 @@ var UIController = (function () {
         getInput: function () {
 
             return {
-                time_lag_factor_option: $('input[name=time_lag_factor_option]:checked').val()
+                time_lag_factor_option: $('input[name=time_lag_factor_option]:checked').val(),
+                
+                
+                time_lag_factor : parseFloat($('#tl_value').text()),
+                pipe_stiffness : parseFloat($('#pipe_stiffness_value').text()),
+                live_load_category : $('input[name=live_load]:checked').val(),
+                depth_of_burial : parseFloat($('#show_depth_of_burial').text()),
+                bedding_constant : parseFloat($('#show_constant_value').text()),
+                earth_load : parseFloat($('#show_combined_unit_weight').text()),
+                surcharge_load: parseFloat($('#show_surcharge_load').text()),
+                embedment_soil_modulus : parseFloat($('#show_eb').text()),
+                in_place_soil_modulus : parseFloat($('#show_en').text()),
+                pipe_diameter: parseInt($('#show_pipe_diameter').text()),
+                trench_width : parseInt($('#show_trench_width').text()),
+
+              
+                
+                
             };
         },
 
@@ -301,7 +421,7 @@ var UIController = (function () {
 
         // Start:: display user input
 
-        display_input: {
+        display_user_input: {
 
             display_time_lag_factor_input: {
 
@@ -332,6 +452,25 @@ var UIController = (function () {
 
             display_pipe_stiffness_input: {
 
+
+                display_psi_for_clicking_modulus1: $('#modulus1').on('click', function () {
+
+                    var modulus1 = $('#psi_for_modulus1').val();
+                    $('#pipe_stiffness_value').text(modulus1);
+
+
+
+                }),
+
+                display_psi_for_clicking_modulus2: $('#modulus2').on('click', function () {
+
+                    var modulus2 = $('#psi_for_modulus2').val();
+                    $('#pipe_stiffness_value').text(modulus2);
+
+
+
+                }),
+
                 display_psi_for_modulus1_value: $('#psi_for_modulus1').on('change', function () {
 
                     var modulus1_value = $('#psi_for_modulus1').val();
@@ -359,6 +498,16 @@ var UIController = (function () {
 
                 }),
 
+                display_custom_modulus_option_value :  $('#custom_modulus').on('click', function () {
+
+                    var custom_modulus_option = $('#psi_for_custom_modulus').val();
+                    $('#pipe_stiffness_value').text(custom_modulus_option);
+
+
+
+                }),
+
+
             },
 
 
@@ -367,9 +516,27 @@ var UIController = (function () {
                 live_load_value: $('input[name=live_load]').on('click', function () {
 
                     var live_load = $('input[name=live_load]:checked').val();
+                    
                     $('#display_live_load_value').text(live_load);
 
 
+
+                }),
+
+                custom_live_load_input : $('#custom_live_load_input').on('keyup', function () {
+
+                    var custom_live_load = $('#custom_live_load_input').val();
+                   
+                    $('#display_live_load_value').text(custom_live_load + " PSI");
+
+
+
+                }),
+
+                custom_live_load_option : $('#custom_live_load_option').on('click',function(){
+
+                    var custom_live_load = $('#custom_live_load_input').val();
+                    $('#display_live_load_value').text(custom_live_load + " PSI");
 
                 }),
 
@@ -432,18 +599,18 @@ var UIController = (function () {
 
                 }),
 
-
+           
 
             },
 
 
-            display_ws: {
+            display_w_sub_e: {
 
-                ws: $('input[name=wob]').on('click', function () {
+                w_sub_e: $('input[name=wob]').on('click', function () {
 
-                    var ws = $('input[name=wob]:checked').val();
-                    $('#show_combined_unit_weight').text(ws);
-                    $('#wob_your_value_input').val(ws);
+                    var w_sub_e = $('input[name=wob]:checked').val();
+                    $('#show_combined_unit_weight').text(w_sub_e);
+                    $('#wob_your_value_input').val(w_sub_e);
                 }),
 
                 your_value: $('#wob_your_value_input').on('keyup', function () {
@@ -455,6 +622,19 @@ var UIController = (function () {
 
                 }),
 
+
+            },
+
+
+            display_w_sub_s:{
+
+                w_sub_s : $('#surcharge_load').on('keyup',function(){
+                    var surcharge_load = $('#surcharge_load').val();
+                    $('#show_surcharge_load').text(surcharge_load);
+
+                    console.log(surcharge_load);
+
+                } ),
 
             },
 
@@ -563,24 +743,30 @@ var UIController = (function () {
 
 var controller = (function (UICtrl, calcDef) {
 
-    $('#calculate').on('click', function () {
-
-       // console.log(calcDef);
-
-
-    });
-
-})(UIController , calculateDeflection);
+   
 
 
 
-$('#calculate').on('click', function () {
 
-    var live_load_category = $('input[name=live_load]:checked').val();
-    var depth_of_burial = parseInt($('#show_depth_of_burial').text());
+
+
+
+    $('#calculate').on('click', getResult);
+
+
+ function getResult(){
+
+   var w_sub_l = (function(){
+    
+    
+    
+    var live_load = 0;
+    var live_load_category = UICtrl.getInput().live_load_category;
+    var depth_of_burial = UICtrl.getInput().depth_of_burial;
 
     console.log( "depth of burial: " + depth_of_burial);
     console.log("live load category : " + live_load_category );
+
        
        if(live_load_category == 'HS20 Loading' || live_load_category == 'HS25 Loading'){
    
@@ -616,7 +802,7 @@ $('#calculate').on('click', function () {
                L2 = (20 + 72 + LLDF * depth_of_burial * 12)/2;
            }
    
-           var live_load = 1.2 * wheel_load * (IF /L1/ L2);
+            live_load = 1.2 * wheel_load * (IF /L1/ L2);
 
            console.log("H int : " + H_int);
            console.log("Wheel load : "+ wheel_load);
@@ -630,11 +816,17 @@ $('#calculate').on('click', function () {
 
         }
 
-        if(live_load_category == 'Coopers E80 Loading'){
+        
+        
+        if(live_load_category == 'E80 Railway'){
             
             var IF_table = [];
             var IF;
             var C;
+            var A = 10;
+            var B = 4;
+
+            var H = depth_of_burial;
 
             for ( var x = 1.4 ; x >0.95 ; x = x - 0.04){
                 IF_table.push(x);
@@ -650,15 +842,223 @@ $('#calculate').on('click', function () {
 
             }
 
+          
+
+
+            var term1 =  (2/Math.PI);
+
+            var term2 = H * Math.sqrt( ( Math.pow(A,2) + Math.pow(B,2)+ Math.pow(H,2)) /  ((Math.pow(A,2) + Math.pow(H,2))*(Math.pow(B,2) + Math.pow(H,2))) );
+
+            var term3 = (A * B * H) /Math.sqrt(Math.pow(A,2)+Math.pow(B,2)+Math.pow(H,2));
+
+            var term4 = ( (1/(Math.pow(A,2) + Math.pow(H,2))) + (1/(Math.pow(B,2) + Math.pow(H,2))));
+
+          
+            C =  1 - term1 *  ( (Math.asin(term2)) -  (term3 * term4)  );
+
+            live_load = C * 14.0625 * IF ; 
+
+           
+
+
+        
+
+
+            console.log("C: " +  C); 
+
             console.log("IF Table: " + IF_table);
-            console.log("IF: " + IF)
+            console.log("IF: " + IF);
+
+            console.log("live load: " + live_load);
+
+
 
 
 
 
         }
+
+        if(live_load_category == 'none'){
+            live_load = 0;
+        }
+
+        if(live_load_category == '0 PSI'){
+            live_load = parseFloat($('#custom_live_load_input').val());
+        }
+
+        
+
+        return live_load;
+   })();
+
+
+   var time_lag_factor =  UICtrl.getInput().time_lag_factor;
+   var pipe_stiffness = UICtrl.getInput().pipe_stiffness;
+   var depth_of_burial = UICtrl.getInput().depth_of_burial;
+   var bedding_constant = UICtrl.getInput().bedding_constant;
+   var w_sub_e = UICtrl.getInput().earth_load;
+   var w_sub_s = UICtrl.getInput().surcharge_load;
+   var E_prime_b = UICtrl.getInput().embedment_soil_modulus;
+   var E_prime_n = UICtrl.getInput().in_place_soil_modulus;
+   var pipe_diameter = UICtrl.getInput().pipe_diameter;
+   var trench_width = UICtrl.getInput().trench_width; 
+
+
+// calculating eb/en
+
+   var eb_by_en = (function(eb , en){
+
+
+    return eb/en;
+
+
+
+   })(E_prime_b, E_prime_n);
+
+
+   console.log('eb/en : ' + eb_by_en);
+
+
+   // calculating B/d (trench width / pipe diameter)
+
+   var B_by_d = (function(tw, pd){
+
+                return tw/pd;
+   
+            })(trench_width, pipe_diameter);
+
+
+   // calculating del_f
+
+
+   var del_f = (function(Bd){
+
+    return Math.min((Bd - 1)/(0.982+0.283*(Bd-1)),1.667);
+   
+})(B_by_d);
+
+
+   // calculating S_sub_c
+     
+   var S_sub_c = (function(del_f, eb_by_en ){
+
+    return 1.667/(del_f+(1.667-del_f) * eb_by_en);
+
+   })(del_f, eb_by_en);
+
+
+
+
+   // calculating E_prime
+
+   var E_prime = (function(){
+       
+    return S_sub_c * E_prime_b;
+   
+    })(S_sub_c,E_prime_b);
+
+
+    // calculating dead load
+
+    var dead_load = (function(w_sub_e , depth_of_burial){
+        return w_sub_e * depth_of_burial / 144;
+    })(w_sub_e, depth_of_burial );
+
+
+
+    // calculating deflection
+
+
+    var deflection = (function(bedding_constant , time_lag_factor , dead_load, w_sub_l , w_sub_s, pipe_stiffness, E_prime){
+
+
+       return bedding_constant * (time_lag_factor * dead_load + w_sub_l + w_sub_s ) / (0.149 * pipe_stiffness + 0.061 * E_prime);
+
+       
+
+    })(bedding_constant , time_lag_factor , dead_load, w_sub_l , w_sub_s, pipe_stiffness, E_prime);
+
+
+
+
+
+console.log("------------Start :: inputs--------------");
+
+console.log('time_lag_factor :' + time_lag_factor);
+console.log('w_sub_l:' + w_sub_l);
+console.log('pipe_stiffness : '+ pipe_stiffness);
+console.log('depth_of_burial : '+depth_of_burial);
+console.log('bedding constant :' + bedding_constant);
+console.log('w_sub_e : '+ w_sub_e);
+console.log('w_sub_s : ' + w_sub_s);
+console.log('E_prime_b : '+E_prime_b);
+console.log("E_prime_n : "+ E_prime_n);
+console.log('pipe_diameter : '+ pipe_diameter);
+console.log("trench_width : "+ trench_width);
+
+
+
+console.log("------------Ends :: inputs--------------");
+
+
+console.log("------------Start :: calculation--------------");
+
+
+console.log("formula : bedding_constant * (time_lag_factor * dead_load + w_sub_l + w_sub_s ) / (0.149 * pipe_stiffness + 0.061 * E_prime)");
+
+
+
+console.log('eb_by_en : ' + eb_by_en);
+console.log('B_by_d : ' + B_by_d);
+console.log('del_f : '+ del_f);
+console.log('S_sub_c : ' + S_sub_c);
+console.log('E_prime  : '+ E_prime );
+console.log("dead_load : "+ dead_load);
+
+
+
+console.log('deflection : '+ deflection);
+
+
+console.log("------------End :: calculation--------------");
+
+
+
+
+
+  
+
+// time_lag_factor : parseFloat($('#tl_value').text()),
+// pipe_stiffness : parseFloat($('#pipe_stiffness_value').text()),
+// live_load_category : $('input[name=live_load]:checked').val(),
+// depth_of_burial : parseFloat($('#show_depth_of_burial').text()),
+// bedding_constant : parseFloat($('#show_constant_value').text()),
+// earth_load : parseFloat($('#show_combined_unit_weight').text()),
+// surcharge_load: parseFloat($('#show_surcharge_load').text()),
+// embedment_soil_modulus : parseFloat($('#show_eb').text()),
+// in_place_soil_modulus : parseFloat($('#show_en').text()),
+// pipe_diameter: parseInt($('#show_pipe_diameter').text()),
+// trench_width : parseInt($('#show_trench_width').text()),
+        
    
 
- });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})(UIController , calculateDeflection);
+
 
 
